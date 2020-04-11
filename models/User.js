@@ -4,24 +4,28 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
-    required: true
+    required: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
+    min: 8,
+    max: 32,
   },
   date: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
-  posts: [{
-    type: Schema.Types.ObjectId,
-    ref: 'post'
-  }]
-})
+  posts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "post",
+    },
+  ],
+});
 const user = mongoose.model("user", UserSchema);
 module.exports = user;

@@ -8,7 +8,7 @@ const User = mongoose.model("user");
 const PostType = new GraphQLObjectType({
   name: "PostType",
   fields: {
-    id: { type: GraphQLID },
+    _id: { type: GraphQLID },
     title: { type: GraphQLString },
     body: { type: GraphQLString },
     author: {
