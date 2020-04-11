@@ -4,20 +4,24 @@ const Schema = mongoose.Schema;
 const PostSchema = new Schema({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   author: {
     type: Schema.Types.ObjectId,
-    ref: "user"
+    ref: "user",
+  },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: "categories",
   },
   body: {
     type: String,
-    required: true
+    required: true,
   },
   date: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 const post =mongoose.model("post", PostSchema);

@@ -7,7 +7,7 @@ const User = mongoose.model("user");
 const UserType = new GraphQLObjectType({
   name: "UserType",
   fields: () => ({
-    id: { type: GraphQLID }, // Mongoose automatically generates an ID field for our models
+    _id: { type: GraphQLID }, // Mongoose automatically generates an ID field for our models
     name: { type: GraphQLString },
     email: { type: GraphQLString },
     posts: {
